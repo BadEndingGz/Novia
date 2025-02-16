@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta Importante</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        img {
+            width: 150px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #ff6699;
+            color: white;
+        }
+        .no {
+            background-color: #cccccc;
+        }
+        .hidden {
+            display: none;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        #loveMessage p {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff3366;
+            animation: bounce 1s infinite, fadeIn 2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://media.tenor.com/ONx_IN1MwtEAAAAj/mochi.gif" alt="Gatito con corazón">
+        <h2>¿Es mi novia la más hermosa del mundo?</h2>
+        <div class="buttons">
+            <button class="yes" onclick="showLove()">Sí</button>
+            <button class="no" onclick="moveButton(this)">No</button>
+        </div>
+    </div>
+    <div id="loveMessage" class="hidden">
+        <img src="
+        https://media1.tenor.com/m/CvR712JEC2QAAAAd/chibi-cat-mochi-cat.gif" alt="Gatito enamorado">
+        <p>Así es amor, eres la más hermosa y preciosa del mundo, puede que yo me equivoque en ciertas cosas como la de ayer, pero quiero que sepas que no es mi intención y a pesar de todas las cosas que ocurran seguirás siendo la niña de mis ojos, esa mujer de la que me enamoré y a la que amaré durante toda mi vida. Sé que es complicado lidiar conmigo en ciertas ocasiones, sé que tengo una personalidad complicada, lo siento por ser así pero que sepas que este tonto te ama a más no poder, y eso nunca cambiará.</p>
+    </div>
+    <script>
+        function showLove() {
+            document.querySelector('.container').classList.add('hidden');
+            document.getElementById('loveMessage').classList.remove('hidden');
+        }
+        function moveButton(button) {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            button.style.position = "absolute";
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
